@@ -25,12 +25,12 @@
       const payload = { name, score };
 
       fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(payload),
-      })
-      .then(res => res.text())
-      .then(msg => alert(msg))
-      .catch(err => console.error("Error:", err));
+  method: "POST",
+  mode: "no-cors",   // 👈 add this
+  body: JSON.stringify(payload),
+})
+.then(() => alert("Saved (but response hidden due to no-cors)"))
+.catch(err => console.error("Error:", err));
     });
   </script>
 </body>
